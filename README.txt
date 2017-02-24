@@ -1,7 +1,7 @@
 --------------------------------------------------
 ------------------  AIM  -------------------------
 -------------------------------------------------- 
-the aim of this code is to support the translation of linguistic WordNet-like concepts.
+The aim of this code is to support the translation of linguistic WordNet-like concepts.
 Every concept is composed of language elements.
 A concept to be translated (source concept) should have:
 	Sense rank

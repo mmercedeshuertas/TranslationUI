@@ -12,8 +12,10 @@
     <link rel="stylesheet", href="css/angular-toggle-switch-bootstrap-3.css">
     <link rel="stylesheet", href="css/angular-material.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="Translation_controller.js"></script>
 
-    <script>
+
+      <script>
       var app = angular.module('myApp', []);
       var data = [{"conceptId":33535,"concept":"nickname","example":"Jim for James and Peg for Margaret.","gloss":"a descriptive name for a place or thing","posTag":"NOUN","synset":[{"id":58413,"vocabularyId":1,"word":{"id":49392,"vocabularyId":1,"lemma":"nickname","forms":[]},"senseFrequency":0,"wordSenseRank":2,"synsetWordRank":1}],"globalId":34010}];
       app.controller('ReferenceController', function($scope, $http) {
@@ -21,24 +23,7 @@
           $scope.sourceConcept=data[0];
       });
 
-
-      var x = document.getElementById('myDIV');
-
-      function yesnoCheck() {
-          if (document.getElementById('no_GAP').checked) {
-              document.getElementById('myDIV').style.display = 'block';
-              document.getElementById('myPOS').style.display = 'block';
-
-          }
-          else {
-              document.getElementById('myPOS').style.display = 'none';
-              document.getElementById('myDIV').style.display = 'none';
-          }
-
-      }
-
-
-    </script>
+      </script>
 
   </head>
   <body ng-app="myApp" >
@@ -129,7 +114,7 @@
 
           <div>
             <div class="col-xs-12">
-              <form name="lexicalizationForm" ng-submit="submitLexicalizationForm(lexicalizationForm.$valid)" novalidate="novalidate">
+              <form name="lexicalizationForm" action="submittedForm.html" novalidate="novalidate">
                 <fieldset>
                   <p class="box-body">
                       <p ng-if="showSummaryGap == true" class="scrollable-contentSummary">
@@ -137,7 +122,6 @@
                           <tr class="tableTask">
                             <td style="width : 50%"><b>Is this a GAP?</b></td>
                             <td>
-                              <!--p ng-show="showResponse"><a ng-disabled="!reEdit || (elementValidated == true)" class="btn block-level btn-success btn-xs pull-right">Yes</a><a ng-hide="!reEdit" ng-click="gapSelected('yestono')" ng-disabled="elementValidated == true" class="btn block-level btn-success btn-xs pull-right">No</a></p-->
                               <input type="radio" name="gender" value="noGAP" id="no_GAP" onclick="yesnoCheck();" checked> No<br>
                               <input type="radio" name="gender" value="yesGAP" id="yes_GAP" onclick="yesnoCheck();"> Yes<br>
 
@@ -148,33 +132,23 @@
                               <div id="myDIV">
                                 <table class="table table-compressed table-striped table-bordered table-stripedTanslation">
                                   <tr>
-                                    <th>Rank </th>
-                                    <th>Lemma</th>
-                                    <th>Exceptional forms</th>
-                                    <th>&nbsp;</th>
+                                      <th>Rank </th>
+                                      <th>Lemma</th>
+                                      <th>Exceptional forms</th>
+                                      <th>&nbsp;</th>
                                   </tr>
-                                  <tr ng-repeat="sense in translationUnit.synset.senses">
-                                    <td class="col-md-1 rankStyle">{{sense.synsetWordRank}}</td>
-                                    <td class="col-md-4">{{sense.word.lemma}}</td>
-                                    <td>
-                                      <div ng-repeat="form in sense.word.forms" class="input-group inputLemma">
-                                        <input ng-model="form.form"  class="form-control inputLemma"/>
-                                      </div>
-                                    </td>
-                                    <td>
-                                      <button type="button" ng-click="deleteLemma($index)" ng-show="reVisit == undefined" class="btn btn-xs btn-danger">Delete</button>
-                                    </td>
-                                  </tr>
+                                </table>
+                                <table class="table table-compressed table-striped table-bordered table-stripedTanslation" id="wordTable">
+
                                   <tr ng-show="reVisit == undefined">
-                                    <td></td>
                                     <td>
-                                      <input ng-model="word.word.lemma" placeholder="Add sense" class="form-control inputLemma"/>
+                                      <input ng-model="word.word.lemma" placeholder="Add sense" class="form-control inputLemma" id="word"/>
                                     </td>
                                     <td>
-                                      <input ng-model="word.word.forms" placeholder="Add exceptional forms for the lemma, comma separated" class="form-control inputLemma"/>
+                                      <input ng-model="word.word.forms" placeholder="Add exceptional forms for the lemma, comma separated" class="form-control inputLemma" id="form"/>
                                     </td>
                                     <td>
-                                      <button type="button" ng-click="pushLemma()" ng-disabled="word.word.lemma == ''" class="btn btn-success btn-xs btn-block">Confirm word</button>
+                                      <button type="button" onclick="pushLemma()" ng-disabled="word.word.lemma == ''" class="btn btn-success btn-xs btn-block">Confirm word</button>
                                     </td>
                                   </tr>
                                 </table>
@@ -237,27 +211,23 @@
                                     <tr >
                                         <th colspan="2">Examples</th>
                                     </tr>
-                                    <tr ng-repeat="example in translationUnit.synsetExamples">
-
-                                        <td ng-show="reVisit == true &amp;&amp; reEdit !== true"
-                                        ng-hide="infoMap['SYNSET_EXAMPLE.'+example.id].status =='DELETE_REQUESTED'">
-                                            <span>{{example.text}}</span>
-                                        </td>
+                                    <tr id="exampleRow">
 
 
-                                        <td ng-show="reVisit == undefined">
+
+                                        <td ng-show="reVisit == undefined" id="deleteButton">
                                             <button type="button" ng-click="deleteExample($index)"
-                                        class="btn btn-xs btn-danger">Delete
+                                        class="btn btn-xs btn-danger" style="display:none">Delete
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td ng-class="{ 'has-error' : exampleWithRightLength()}">
-                                            <input placeholder="Add an example" ng-model="example.text"
-                                        class="form-control inputExample"/>
+                                        <td>
+                                            <input placeholder="Add your example here" ng-model="example.text"
+                                        class="form-control inputExample" id="example" />
                                         </td>
                                         <td>
-                                            <button type="button" ng-click="pushExample()" ng-disabled="example.text == ''"
+                                            <button type="button" onclick="pushExample()" ng-disabled="example.text == ''"
                                         class="btn-success btn btn-xs pull-right btn-block">Confirm Example
                                             </button>
                                         </td>
@@ -270,7 +240,7 @@
                     <tr class="tableTask">
                         <td>
                             <div class="btn-group myButton">
-                                <a ng-click="SUBMIT()" class="btn block-level btn-info btn-md">SUBMIT</a>
+                                <input type="submit" class="btn block-level btn-info btn-md" value="Submit">
                             </div>
                         </td>
                     </tr>
