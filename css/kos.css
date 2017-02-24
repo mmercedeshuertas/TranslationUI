@@ -1,0 +1,53 @@
+[ng-cloak].splash {
+  display: block !important;
+}
+[ng-cloak] {display: none;}
+#splash {
+    background: blue;
+    color: white;
+}
+
+#desktop{
+  padding:25px;
+  height: -moz-calc(100% - 128px);
+  height: -webkit-calc(100% - 128px);
+  height: -o-calc(100% - 128px);
+  height: calc(100% - 128px);
+  z-index: 2;
+}
+#appSpace{
+  z-index: 1;
+  top: 90;
+  position: absolute;
+  padding:25px;
+}
+
+.tc-chart-js-legend {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.tc-chart-js-legend li {
+  display: inline;
+  float: left;
+  padding:10px;
+  margin-right: 20px;
+}
+.tc-chart-js-legend li span {
+  width:25px;
+  height:25px;
+  display:block;
+  float:left;
+  margin-right:10px;
+}
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+/* Responsive Breadcrumb */
+
+
+/* TreeView */
+
+
+/* EndTreeView */

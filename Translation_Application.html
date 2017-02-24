@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet", type="text/css", href="css/skins">
+      <link rel="stylesheet", type="text/css", href="css/My_css.css">
+    <link rel="stylesheet", type="text/css", href="css/bootstrap.lte.min.css">
+    <link rel="stylesheet", type="text/css", href="css/bootstrap.css">
+    
+    <link rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet", type="text/css", href="css/AdminLTE.min.css">
+    <link rel="stylesheet", href="css/select.min.css">
+    <link rel="stylesheet", href="css/angular-toggle-switch-bootstrap-3.css">
+    <link rel="stylesheet", href="css/angular-material.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script>
+      var app = angular.module('myApp', []);
+      var data = [{"conceptId":33535,"concept":"nickname","example":"Jim for James and Peg for Margaret.","gloss":"a descriptive name for a place or thing","posTag":"NOUN","synset":[{"id":58413,"vocabularyId":1,"word":{"id":49392,"vocabularyId":1,"lemma":"nickname","forms":[]},"senseFrequency":0,"wordSenseRank":2,"synsetWordRank":1}],"globalId":34010}];
+      app.controller('ReferenceController', function($scope, $http) {
+          console.log('hello1');
+          $scope.sourceConcept=data[0];
+      });
+
+
+      var x = document.getElementById('myDIV');
+
+      function yesnoCheck() {
+          if (document.getElementById('no_GAP').checked) {
+              document.getElementById('myDIV').style.display = 'block';
+              document.getElementById('myPOS').style.display = 'block';
+
+          }
+          else {
+              document.getElementById('myPOS').style.display = 'none';
+              document.getElementById('myDIV').style.display = 'none';
+          }
+
+      }
+
+
+    </script>
+
+  </head>
+  <body ng-app="myApp" >
+  <h3 class="my_row">
+      Welcome to the translation application
+  </h3>
+    <div class="my_row">
+
+      <div class="col-4">
+        <div ng-controller="ReferenceController" ng-init="init(conceptId, undefined, assignmentId)">
+          <!--lkc-source-view-->
+          <div collapsible="false" class="box box-default box-solid"></div>
+          <div class="box-header with-border">
+            <div class="boxTaskHeading">
+                <h4>
+                    This activity is in: English
+                </h4>
+              
+            </div>
+          </div>
+          
+          <div class="box-body">
+            <div class="row">
+              <div class="col-xs-12">
+                
+                <table ng-show="sourceConcept.gloss" class="table table-compressed table-striped">
+                  <tr class="tableTask">
+                    <th>Senses  </th>
+                    <td style="padding:0">
+                      <table class="table table-striped table-compressed table-bordered">
+                        <tr>
+                          <th>Rank</th>
+                          <th>Lemma</th>
+                          <th>Exceptional forms</th>
+                        </tr>
+                        <tr ng-repeat="word in sourceConcept.synset">
+                          <td>{{word.synsetWordRank}}</td>
+                          <td>{{word.word.lemma}}</td>
+                          <td><span ng-repeat="form in word.word.forms">{{form.form}}
+                              &nbsp;</span></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr class="tableTask">
+                    <th>POS</th>
+                    <td>{{sourceConcept.posTag}}
+                      
+                    </td>
+                  </tr>
+                  <tr class="tableTask">
+                    <th>Gloss</th>
+                    <td>{{sourceConcept.gloss}}
+                      
+                    </td>
+                  </tr>
+                  <tr class="tableTask">
+                    <th>Examples</th>
+                    <td>
+                      <ul ng-show="sourceConcept.example">
+                        <li>{{sourceConcept.example}}
+                          
+                        </li>
+                      </ul>
+                      
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <!--lkc-translator-view-->
+        <div ui-view="lkc_trasnlatorView" class="box box-default box-solid translationPanelMH"></div>
+
+        <div class="box-header with-border">
+          <div class="boxTaskHeading">
+              <h4>
+                Write your translation here
+              </h4>
+          </div>
+
+        </div>
+
+        <div class="box-body">
+
+          <div>
+            <div class="col-xs-12">
+              <form name="lexicalizationForm" ng-submit="submitLexicalizationForm(lexicalizationForm.$valid)" novalidate="novalidate">
+                <fieldset>
+                  <p class="box-body">
+                      <p ng-if="showSummaryGap == true" class="scrollable-contentSummary">
+                        <table class="table table-compressed table-stripedSummary">
+                          <tr class="tableTask">
+                            <td style="width : 50%"><b>Is this a GAP?</b></td>
+                            <td>
+                              <!--p ng-show="showResponse"><a ng-disabled="!reEdit || (elementValidated == true)" class="btn block-level btn-success btn-xs pull-right">Yes</a><a ng-hide="!reEdit" ng-click="gapSelected('yestono')" ng-disabled="elementValidated == true" class="btn block-level btn-success btn-xs pull-right">No</a></p-->
+                              <input type="radio" name="gender" value="noGAP" id="no_GAP" onclick="yesnoCheck();" checked> No<br>
+                              <input type="radio" name="gender" value="yesGAP" id="yes_GAP" onclick="yesnoCheck();"> Yes<br>
+
+                            </td>
+                          </tr>
+                          <tr class="tableTask">
+                            <td style="padding:0" colspan="2">
+                              <div id="myDIV">
+                                <table class="table table-compressed table-striped table-bordered table-stripedTanslation">
+                                  <tr>
+                                    <th>Rank </th>
+                                    <th>Lemma</th>
+                                    <th>Exceptional forms</th>
+                                    <th>&nbsp;</th>
+                                  </tr>
+                                  <tr ng-repeat="sense in translationUnit.synset.senses">
+                                    <td class="col-md-1 rankStyle">{{sense.synsetWordRank}}</td>
+                                    <td class="col-md-4">{{sense.word.lemma}}</td>
+                                    <td>
+                                      <div ng-repeat="form in sense.word.forms" class="input-group inputLemma">
+                                        <input ng-model="form.form"  class="form-control inputLemma"/>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <button type="button" ng-click="deleteLemma($index)" ng-show="reVisit == undefined" class="btn btn-xs btn-danger">Delete</button>
+                                    </td>
+                                  </tr>
+                                  <tr ng-show="reVisit == undefined">
+                                    <td></td>
+                                    <td>
+                                      <input ng-model="word.word.lemma" placeholder="Add sense" class="form-control inputLemma"/>
+                                    </td>
+                                    <td>
+                                      <input ng-model="word.word.forms" placeholder="Add exceptional forms for the lemma, comma separated" class="form-control inputLemma"/>
+                                    </td>
+                                    <td>
+                                      <button type="button" ng-click="pushLemma()" ng-disabled="word.word.lemma == ''" class="btn btn-success btn-xs btn-block">Confirm word</button>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                    <tr class="tableTask">
+                        <td colspan="3">
+                            <div>
+                                <table class="table table-compressed table-striped table-bordered table-stripedTanslation">
+                                    <tr id="myPOS">
+                                        <th class="tableTask">P.O.S. <sub> &thinsp; Part of Speech </sub></th>
+                                        <td >
+                                            <select id="pos" placeholder="Select a pos tag"
+                                                    ng-model="translationUnit.synset.partOfSpeech"
+                                                    ng-required="!translationUnit.lexicalGap || lexicalGapPresent == false"
+                                                    class="form-control languageSelection selectpos">
+                                                <script>
+                                                    var possiblePosTag;
+                                                    possiblePosTag = [{
+                                                            code: "ADJECTIVE",
+                                                            label: "Adjective"
+                                                        },
+                                                        {
+                                                            code: "ADVERB",
+                                                            label: "Adverb"
+                                                        },
+                                                        {
+                                                            code: "NOUN",
+                                                            label: "Noun"
+                                                        },
+                                                        {
+                                                            code: "VERB",
+                                                            label: "Verb"
+                                                        }
+                                                    ];
+                                                    var i, len, text;
+                                                    for (i = 0, len = possiblePosTag.length, text = ""; i < len; i++) {
+                                                        text +="<option value='"+i+"'>"+possiblePosTag[i].label + "</option>";
+                                                    }
+                                                    document.getElementById("pos").innerHTML = text;
+
+                                                </script>
+
+                                            </select>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Gloss</th>
+                                        <td  colspan="3"
+                                            class="form-group">
+                                            <input ng-required="!translationUnit.lexicalGap || lexicalGapPresent == false"
+                                                   placeholder="Propose a gloss" name="gloss"
+                                                   ng-model="translationUnit.synset.gloss"
+                                                   class="form-control inputGloss"/>
+                                        </td>
+                                    </tr>
+
+                                    <tr >
+                                        <th colspan="2">Examples</th>
+                                    </tr>
+                                    <tr ng-repeat="example in translationUnit.synsetExamples">
+
+                                        <td ng-show="reVisit == true &amp;&amp; reEdit !== true"
+                                        ng-hide="infoMap['SYNSET_EXAMPLE.'+example.id].status =='DELETE_REQUESTED'">
+                                            <span>{{example.text}}</span>
+                                        </td>
+
+
+                                        <td ng-show="reVisit == undefined">
+                                            <button type="button" ng-click="deleteExample($index)"
+                                        class="btn btn-xs btn-danger">Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td ng-class="{ 'has-error' : exampleWithRightLength()}">
+                                            <input placeholder="Add an example" ng-model="example.text"
+                                        class="form-control inputExample"/>
+                                        </td>
+                                        <td>
+                                            <button type="button" ng-click="pushExample()" ng-disabled="example.text == ''"
+                                        class="btn-success btn btn-xs pull-right btn-block">Confirm Example
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr class="tableTask">
+                        <td>
+                            <div class="btn-group myButton">
+                                <a ng-click="SUBMIT()" class="btn block-level btn-info btn-md">SUBMIT</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

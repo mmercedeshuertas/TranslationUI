@@ -1,0 +1,691 @@
+
+/***********************************************/
+/***        MERCEDES STYLES                  ***/
+/***********************************************/
+/* TITTLE */
+.challengeSelection {
+    font-family:  "Helvetica" ;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -10px;
+    /*font-style: italic;*/
+}
+
+.noAssignment{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.boxTaskHeading{
+    font-family: "Helvetica" ;
+    font-size: 1em;
+    font-weight: bold;
+    /*height: 15px;*/
+}
+
+.panel-primaryMH{
+    background-color: #0099FF;
+}
+.backgroundStyle{
+    display:block;
+    overflow:auto;
+}
+/*.boxAssignment{
+    background-color: #FF0000;
+
+}*/
+.boxchanllenges{
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+.boxContainer{
+    /*width: 900px;
+    margin-left: 60px;*/
+    max-height: 350px;
+    overflow: auto;
+    font-family: "Helvetica";
+}
+.box-headerMH{
+    background-color:  #0099FF;
+    font-weight: bold;
+    color: white;
+    font-family: "Helvetica";
+
+}
+
+.btn-groupAssignMH{
+    margin-left: 20px;
+}
+
+.btn-groupStartMH{
+    margin-left: 90px;
+}
+
+.buttonsStartMH{
+    /*background-color: #0099FF;*/
+    color: white;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+.buttonDelete{
+    background-color: rgb(215,48,39);
+    color: white;
+    font-family: "Helvetica";
+    font-size: 0.8em;
+}
+.buttonDeletelkc{
+    background-color: rgb(215,48,39);
+    color: white;
+    font-family: "Helvetica";
+}
+.buttonIKnow{
+    background-color: #66CC33;
+    color: white;
+    font-family: "Helvetica";
+}
+.buttonIKnowBorder{
+    background-color: #66CC33;
+    border-color: white;
+    color: white;
+    font-family: "Helvetica";
+}
+.buttonIDontKnow{
+    background-color: #FF9900;
+    color: white;
+    font-family: "Helvetica";
+}
+.table-stripedMH>tbody>tr:nth-child(odd)>td,
+.table-stripedMH>tbody>tr:nth-child(odd)>th {
+    background-color: #FFFFFF ;
+    width: 100%;
+    font-family: "Helvetica";
+}
+
+.conceptStyle{
+    font-family: "Helvetica";
+    font-style: italic;
+}
+.legendMH{
+    vertical-align: middle;
+    margin: 0 auto;
+    border-color: transparent;
+}
+.boxInTableOneAssig{
+    width: 310px;
+    height: 125px;
+    /*font-family: "Helvetica";
+    /*margin-right: 10px;*/
+    border: 0.5px solid black;
+    vertical-align: middle;
+    margin: 0 auto;
+    /* margin-left: 335px;*/
+}
+.boxInTableMoreAssig{
+    font-family: "Helvetica";
+    width: 310px;
+    height: 125px;
+    border: 0.5px solid black;
+    margin-right: 10px;
+    margin-left: 60px;
+}
+
+/*  TRANSLATOR VIEW   */
+.translationPanelMH{
+    /*height: 375px;*/
+}
+.validationPanelMH{
+    /*height: 570px;*/
+}
+.box-provenance{
+    background-color: #FFFFFF;
+}
+
+.tableTask{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+}
+.titleBoxValidation{
+    font-family: "Helvetica";
+    font-size: 0.65em;
+    font-weight: bold;
+}
+.tableTaskRespone{
+    font-family: "Helvetica";
+    font-size: 1em;
+}
+.table-stripedTask{
+    width: 100%;
+    /* max-height: 200px;
+     overflow: auto;*/
+}
+.table-stripedSummary{
+    width: 100%;
+    max-width: 100%;
+}
+
+.table-stripedSummaryLemma{
+    width: 100%;
+    max-width: 100%;
+}
+
+.table-stripedTanslation{
+    width: 97%;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+.languageSelection{
+    font-family: "Helvetica";
+    font-size: 0.7em;
+}
+.managerSelection{
+    font-family: "Helvetica";
+    font-size: 0.9em;
+}
+.managerinput{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 25px;
+    width: 200px;
+}
+.alertExample{
+    text-align: center;
+    /*width: 100px;*/
+}
+
+.boxTarget{
+    width: 100%;
+    min-height: 280px;
+    /*max-height: 280px;*/
+    font-family: "Helvetica";
+}
+
+.testGAP{
+    font-family: "Helvetica";
+    text-align: center;
+    font-size: 2em;
+    margin-top: 75px;
+    font-weight: bold;
+}
+.buttonGroupGap{
+    width: 100%;
+    margin-left: 35%;
+    margin-top:  20px;
+    /*margin-bottom: 10px;*/
+}
+.buttonGroupGap{
+    width: 100%;
+    margin-left: 40%;
+    margin-top:  20px;
+    /*margin-bottom: 10px;*/
+}
+.gapComment{
+    font-family: "Helvetica";
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 100%;
+}
+.gapFields{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    width: 450px;
+    height: 25px;
+}
+.gapFieldsRevisit{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    width: 320px;
+    height: 25px;
+}
+
+.textSummary{
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: -25px;
+    text-align: center;
+
+}
+.rejectedMessage{
+    color:   #880000;
+}
+.acceptedMessage{
+    color:#006633;
+}
+.waitingMessage{
+    color: #00CCFF;
+}
+.buttonSummary{
+    width:      100%;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+
+.buttonSummaryTranslation{
+    width:      100%;
+    margin-left: 25%;
+    /*margin-top: 8%;*/
+}
+.buttonSummaryValidation{
+    width:      100%;
+    margin-left: 20%;
+    /*margin-top: 8%;
+    vertical-align: middle;
+    margin: 0 auto;*/
+}
+.buttonSummaryUKC{
+    width:      100%;
+    margin-left: 20%;
+
+}
+.buttonSummaryukcValidation{
+    width:      100%;
+    /*margin-left: 5%;*/
+    position: relative;
+
+}
+.textGoAhead{
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 7px;
+    margin-top: 85px;
+    text-align: center;
+}
+.textGoAheadValidation{
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 85px;
+    min-height: 120px;
+    text-align: center;
+
+}
+.textAssignmentManager{
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+}
+.inputLemma{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 100px;
+}
+.inputExample{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 280px;
+}
+.inputGloss{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 320px;
+}
+.rankStyle{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+}
+.showForm{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 50px;
+}
+.showLemma{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 115px;
+}
+.inputExampe{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 20px;
+    width: 200px;
+    margin-left: 12px;
+}
+.selectpos{
+    height: 25px;
+    width:  150px;
+}
+
+.scrollable-content {
+    height: 200px;
+    overflow: auto;
+    /*background-color: blue;*/
+}
+
+.scrollable-contentExample {
+    height: 180px;
+    overflow: auto;
+    /*background-color: blue;*/
+}
+.scrollable-contentLemma{
+    max-height: 350px;
+    width: 100%;
+    overflow: auto;
+}
+
+.scrollable-contentSummary {
+    max-height: 410px;
+    overflow: auto;
+    width: 100%;
+    /*background-color: blue;*/
+}
+.scrollable-contentTableAssignment {
+    height: 180px;
+    overflow: auto;
+    /*width: 100%;
+    background-color: blue;*/
+}
+.scrollable-contentTree {
+    /*height: 60%;
+    */max-height: 300px;
+    overflow-y: auto;
+    /*margin-top: -30px;*/
+
+    /*background-color: blue;*/
+}
+.scrollable-contentValidation{
+    overflow: auto;
+    max-height: 500px;
+}
+.scrollable-contentUKCValidation{
+    overflow: auto;
+    max-height: 450px;
+}
+.scrollable-contentStatistics{
+    overflow: scroll;
+    /*max-height: 350px;*/
+    max-height: 350px;
+}
+
+.success{
+    background-color: #66FFCC;
+}
+
+.noMoreWordsStyle{
+    font-size: 1.4em;
+    font-family: "Helvetica";
+    text-align: center;
+}
+
+.showSuccess{
+    /*background-color: #33FF99;*/
+    color:#006600;
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+.showSuccess.showSuccessManager{
+    margin-bottom: 50px;
+}
+.showSuccess.showSuccessValidator{
+    margin-bottom: 50px;
+}
+.validatorMessages{
+    /*background-color: #33FF99;*/
+    /*color:black;*/
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -5px;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+.showError{
+    /*background-color: #33FF99;*/
+    color:#E00000;
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gapCheckBox{
+    margin-left: 10px;
+}
+.buttonMinus{
+    height: 1.5px;
+    width: 2px;
+    font-size: 0.3em;
+    text-align: center;
+}
+.cellBackgroung{
+    background-color: warning;
+}
+
+
+/*      from internet   */
+/* source: http://www.ehow.com/how_12214447_make-collapsing-lists-java.html */
+.FAQ {
+    display : block;
+    margin: 0px 0px 0px 70px;
+    vertical-align: top;
+    height:auto !important;
+}
+.list {
+    display:none;
+    height:auto;
+    margin:0;
+    float: left;
+}
+.show {
+    display: none;
+}
+.hide:target + .show {
+    display: inline;
+}
+.hide:target {
+    display: none;
+}
+.hide:target ~ .list {
+    display:inline;
+}
+
+/*style the (+) and (-) */
+.hide, .show {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 1px 0 #666;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 1px 1px 2px #000;
+    background: #cccbbb;
+    opacity: .95;
+    margin-right: 0;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.hide:hover, .show:hover {
+    color: #eee;
+    text-shadow: 0 0 1px #666;
+    text-decoration: none;
+    box-shadow: 0 0 4px #222 inset;
+    opacity: 1;
+    margin-bottom: 25px;
+}
+
+.list p{
+    height:auto;
+    margin:0;
+}
+.question {
+    float: left;
+    height: auto;
+    width: 90%;
+    line-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+.treeStyle{
+    font: "Helvetica";
+    font-size: 1em;
+}
+
+.buttonNextWord{
+    background-color: rgb(251,191,69);
+}
+
+
+/**************************************
+
+            STYLES MANAGER
+
+**************************************/
+/*.boxsource{
+    max-height: 335px;
+    overflow: scroll;
+
+}*/
+.barStatsStyle{
+    font-family: "Helvetica";
+    font-size: 0.9em;
+}
+.statisticHeader{
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+.statisticHeader.underlined{
+    text-decoration: underline;
+}
+.textSynchronization{
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+}
+.tabHeading{
+    font-family: "Helvetica";
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.buttonLetters{
+    font-family: "Helvetica";
+    /*font-size: 0.8em;
+    font-weight: bold;*/
+}
+.buttonStatistics{
+    font-family: "Helvetica";
+    font-size: 0.6em;
+    font-weight: bold;
+}
+.buttonRoleStatistics{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.buttonManagerGreen{
+    background-color: #66CC33;
+    color: white;
+    font-family: "Helvetica";
+}
+.buttonManagerPurple{
+    background-color: #330099;
+    color: white;
+    font-family: "Helvetica";
+}
+.buttonManagerBlue{
+    background-color: #6699CC;
+    color: white;
+    font-family: "Helvetica";
+}
+.inputUser{
+    font-family: "Helvetica";
+    font-size: 0.8em;
+    height: 30px;
+}
+.legendBox{
+    font-family: "Helvetica";
+    font-size: 0.7em;
+    max-height: 35px;
+}
+.legendBoxBody{
+    height: 25px;
+}
+.tableLegend{
+    font-family: "Helvetica";
+    font-size: 0.7em;
+    /*text-align: center;*/
+    vertical-align: middle;
+    margin: 0 auto;
+    height: 15px;
+}
+.tableLegend.alignCenter{
+    text-align: center;
+}
+.tableLegend.alignRight{
+    text-align: right;
+}
+.legend{
+    color:white;
+    font-weight: bold;
+    font-family: "Helvetica";
+    font-size: 0.9em;
+}
+.legendInfo{
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.legendSuccess {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.legendWarning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.legendError {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+.tableLegend{
+    width: 100px;
+    margin-left: 90px;
+}
+.boxManager{
+    font-family: "Helvetica";
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.messageLexicalization{
+    height: 50px;
+}
+.messageSynced{
+    /*background-color: #33FF99;*/
+    color:#006600;
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.messageNotSynced{
+    /*background-color: #33FF99;*/
+    color:#0099FF;
+    font-family: "Helvetica";
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.sectionManager{
+    margin-top: -30px;
+}
+.tableAssignmentManager{
+    max-height: 500px;
+    /*max-height: 470px;*/
+    overflow: scroll;
+}
